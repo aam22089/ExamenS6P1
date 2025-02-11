@@ -1,3 +1,4 @@
+import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -5,6 +6,7 @@ import { NavController } from '@ionic/angular';
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss'],
+  imports: [CommonModule, NgFor]
 })
 export class FormularioComponent implements OnInit {
 
