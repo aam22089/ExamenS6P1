@@ -1,0 +1,33 @@
+<h2>Lista</h2>
+<input #titleInput type="text" placeholder="Titulo" style="margin: 5px;" />
+<input #dateInput type="date" style="margin: 5px;" />
+<input #nameInput type="text" placeholder="Nombre" style="margin: 5px;" />
+<input #producerInput type="text" placeholder="Productora" style="margin: 5px;" />
+<input #protagInput type="text" placeholder="Protagonista" style="margin: 5px;" />
+
+
+<button (click)="addItem(titleInput.value, dateInput.value, nameInput.value, producerInput.value, protagInput.value);"
+  style="margin: 5px;"> Agregar </button>
+
+<table border="1" style="margin-top: 20px; width: 70%; text-align: left;">
+  <thead>
+    <tr>
+      <th> ID </th>
+      <th>Título</th>
+      <th>Fecha de Lanzamiento</th>
+      <th>Productor</th>
+      <th>Casa Productora</th>
+      <th>Protagonista</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{item.id}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.producer}}</td>
+      <td>{{item.protagonist}}</td>
+    </tr>
+  </tbody>
+</table>

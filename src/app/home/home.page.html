@@ -7,14 +7,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ng-container *ngIf="Quote; else loading">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{Quote.quote}}
+        </ion-card-title>
+        <ion-card-content>
+          Author: {{Quote.author}}
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </ng-container>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ng-template #loading>
+    <ion-spinner name="crescent"></ion-spinner>
+  </ng-template>
 </ion-content>
